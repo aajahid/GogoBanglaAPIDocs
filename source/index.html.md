@@ -2,238 +2,295 @@
 title: API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - shell
-  - ruby
-  - python
-  - javascript
+  - curl
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
+  - <a href='https://chaldal.com'>Chaldal.com</a>
+  - Written by <a href="mailto:abdullah.al.jahid@gmail.com"> Abdullah Al Jahid</a>
+  - Senior Software Engineer
+  - Chaldal.com
 
 includes:
-  - errors
 
 search: true
 ---
 
-# Introduction
+# Intruduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+#### API ENDPOINTS
+* Live: [http://eggtransport.chaldal.com/api](http://eggtransport.chaldal.com/api) 
+* Development: [http://dev-eggtransportin.chaldal.com/api](http://dev-eggtransportusw.chaldal.com/api) 
 
-We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+API  Explorer available at - ( Powered by Swagger )
 
-This example API documentation page was created with [Slate](https://github.com/slatedocs/slate). Feel free to edit it and use it as a base for your own API's documentation.
+* Live: [http://eggtransport.chaldal.com/swagger](http://eggtransport.chaldal.com/swagger) 
+* Development: [http://dev-eggtransportin.chaldal.com/swagger](http://dev-eggtransportusw.chaldal.com/swagger)
+
 
 # Authentication
-
-> To authorize, use this code:
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
 ```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
+X-Egg-ApiKey : 00000000-0000-0000-0000-000000000000
+X-Egg-UserId : 00000000-0000-0000-0000-000000000000
 ```
+Authentication are done by simple http header based Authentication. Authenticate using the API by including your secret API key and User Id in the request. If you already don't have them - contact us at tech@chaldal.com to get one.
 
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
-```
+Your API key and User Id carry many privileges, so be sure to keep them secret! Do not share your secret API keys in publicly accessible areas such GitHub, client-side code, and so forth.
 
-```javascript
-const kittn = require('kittn');
+You will need to pass your User Id and API key as http header request to all the API requests. API key as `X-Egg-ApiKey` and User ID as `X-Egg-UserId`.
 
-let api = kittn.authorize('meowmeowmeow');
-```
 
-> Make sure to replace `meowmeowmeow` with your API key.
+# Parcel
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
 
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-
-# Kittens
-
-## Get All Kittens
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
-
-> The above command returns JSON structured like this:
+## Parcel Object
 
 ```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
+{
+  "TrackingRef":"IA1B18000",
+  "MerchantRef":"S171008002",
+  "Physique": {
+      "$Case":"Tangible",
+      "Dimension": {
+          "$Case":"Partial",
+          "MaxDimension":10,
+          "Volume":1000
+      },
+      "Mass":{ 
+          "$Case":"Partial",
+          "Total":1000
+      },
+      "RequiresRefrigeration":false
   },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
-```
-
-This endpoint retrieves all kittens.
-
-### HTTP Request
-
-`GET http://example.com/api/kittens`
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
+  "AddressInfo":{
+      "Address":410000,
+      "Identity":"27fc8asd-a34a-4b7a-b2fc-94e6ed4a659e",
+      "FullName":"CUSTOMER NAME",
+      "StreetAddress":"Niketon Gulshan",
+      "PhoneNumber":"+8801900000000",
+      "DeliveryArea":{
+          "Id":24,
+          "Name":"Niketan"
+      },
+      "CustomerHub":"Banani",
+      "GeoLocation":null,
+      "ConfidenceLevel":"Level0"
+  },
+  "SlotStart":"2017-10-11T11:30:00+06:00",
+  "SlotEnd":"2017-10-11T15:00:00+06:00",
+  "CashToCollect":0,
+  "StockValue":0,
+  "Weight":"Less Than 1 Kg",
+  "Status":"Delivered",
+  "TaskType":"Delivery",
+  "MerchantHub":"Mirpur"
 }
 ```
 
-This endpoint retrieves a specific kitten.
+This object represent a parcel. In the API responses its refered as "Task". 
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+| ATTRIBUTES  | Description                                           | type   |
+|-------------|-------------------------------------------------------|--------|
+| TrackingRef | The system generated unique tracking key for a parcel | string |
+| MerchantRef | Marchant defined reference key.                       | string |
 
-### HTTP Request
 
-`GET http://example.com/kittens/<ID>`
 
-### URL Parameters
+## Search Parcels
 
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
+> Definition
 
-## Delete a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.delete(2)
+```
+GET http://eggtransport.chaldal.com/api/Task/SearchTasksForMyOrg
 ```
 
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.delete(2)
-```
+> Example Request
 
 ```shell
-curl "http://example.com/api/kittens/2"
-  -X DELETE
-  -H "Authorization: meowmeowmeow"
+# Make sure to replace `X-Egg-ApiKey` and `X-Egg-UserId` with your API key.
+$ curl 'http://eggtransport.chaldal.com/api/Task/SearchTasksForMyOrg?searchText=&taskType=All&highLevelStatus=All&fromDate=null&toDate=null&pageNum=1&pageSize=20' \
+  -X GET \
+  --header 'Accept: application/json' \
+  --header 'X-Egg-ApiKey : c3750994-e429-4957-b35d- 40190d002c75' \
+  --header 'X-Egg-UserId : cb3073b8-ddd2-432f-80b3-efbc725e23f7'
 ```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.delete(2);
-```
-
-> The above command returns JSON structured like this:
+> Example Response
 
 ```json
 {
-  "id": 2,
-  "deleted" : ":("
+    Data: [
+        {
+            "TrackingRef":"IA1B18000",
+            "MerchantRef":"S171008002",
+            "Physique": {
+                "$Case":"Tangible",
+                "Dimension": {
+                    "$Case":"Partial",
+                    "MaxDimension":10,
+                    "Volume":1000
+                },
+                "Mass":{ 
+                    "$Case":"Partial",
+                    "Total":1000
+                },
+                "RequiresRefrigeration":false
+            },
+            "AddressInfo":{
+                "Address":410000,
+                "Identity":"27fc8asd-a34a-4b7a-b2fc-94e6ed4a659e",
+                "FullName":"CUSTOMER NAME",
+                "StreetAddress":"Niketon Gulshan",
+                "PhoneNumber":"+8801900000000",
+                "DeliveryArea":{
+                    "Id":24,
+                    "Name":"Niketan"
+                },
+                "CustomerHub":"Banani",
+                "GeoLocation":null,
+                "ConfidenceLevel":"Level0"
+            },
+            "SlotStart":"2017-10-11T11:30:00+06:00",
+            "SlotEnd":"2017-10-11T15:00:00+06:00",
+            "CashToCollect":0,
+            "StockValue":0,
+            "Weight":"Less Than 1 Kg",
+            "Status":"Delivered",
+            "TaskType":"Delivery",
+            "MerchantHub":"Mirpur"
+        }
+    ],
+    TotalCount: 57
+}
+
+```
+
+`GET /Task/SearchTasksForMyOrg`
+
+
+Listing and searching parcels are done through this single API endpoint. 
+If you just want to list all latest parcels - keep most of the searching params empty.
+Otherwise use available query params to filter/search your specific parcel.
+
+### URL Parameters
+| Parameter       | Description                                                                                                                                                                | Parameter Type | Data Type |
+|-----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------|-----------|
+| searchText      | Search `TrackingRef`, `MerchantRef`, associated address `PhoneNumber`.  It will match all of these fields and return if anything. If no search needed pass a empty string  | query          | string    |
+| taskType        | Available values are - `All`, `Delivery`, `PickUp`                                                                                                                         | query          | string    |
+| fromDate        | Self explanatory. Pass `null` if you want to ignore this field. Example date format - 2017-09-08T00:00:00+06:00. Make sure its URI encoded                                 | query          | date-time |
+| toDate          | Similar to `fromDate`                                                                                                                                                      | query          | date-time |
+| highLevelStatus | Filter by high level status. Available options are - `All`, `Preparing`, `Delivering`, `Returning`, `Completed`, `Failed`                                                  | query          | string    |
+| pageNum         | For pagination, Page number                                                                                                                                                | query          | integer   |
+| pageSize        | Number of items to show in a single page                                                                                                                                   | query          | integer   |
+
+
+
+
+
+## Get Parcels
+
+> Definition
+ 
+```
+POST http://eggtransport.chaldal.com/api/Task/GetTasks
+```
+
+> Example Request
+
+```shell
+# Make sure to replace `X-Egg-ApiKey` and `X-Egg-UserId` with your API key.
+$ curl 'http://eggtransport.chaldal.com/api/Task/GetTasks' \
+ -X POST \
+ --header 'Accept: application/json' \
+ --header 'Content-Type: application/json' \
+ --header 'X-Egg-ApiKey : c3750994-e429-4957-b35d-40190d002c75' \
+ --header 'X-Egg-UserId : cb3073b8-ddd2-432f-80b3-efbc725e23f7' \
+ -d '["YMMP68CNJ","VHM1W8CNL"]' 
+```
+
+> Example Response
+
+```json
+{
+  "VHM1W8CNL": {
+    "TrackingRef": "VHM1W8CNL",
+    "MerchantRef": "Ombre by Ash-R1J284",
+    "Physique": {
+      "$Case": "Tangible",
+      "Dimension": {
+        "$Case": "Unavailable"
+      },
+      "Mass": {
+        "$Case": "Unavailable"
+      },
+      "RequiresRefrigeration": false
+    },
+    "AddressInfo": {
+      "Address": 415409,
+      "Identity": "dfa83301-8657-49d6-9ffd-63fa920c6aaa",
+      "FullName": "Ayesha Marzana",
+      "StreetAddress": "House 60/D .Road 131. Gulshan 1,Vantage Travel Agency-2nd floor.,",
+      "PhoneNumber": "+8801630167640",
+      "DeliveryArea": {
+        "Id": 15,
+        "Name": "Gulshan"
+      },
+      "CustomerHub": "Banani",
+      "GeoLocation": null,
+      "ConfidenceLevel": "Level0"
+    },
+    "SlotStart": "2017-10-11T11:30:00+06:00",
+    "SlotEnd": "2017-10-11T15:00:00+06:00",
+    "CashToCollect": 1310,
+    "StockValue": 1310,
+    "Weight": "Unknown",
+    "Status": "Delivering",
+    "TaskType": "Delivery",
+    "MerchantHub": "Kallayanpur"
+  },
 }
 ```
 
-This endpoint deletes a specific kitten.
+`POST /Task/GetTasks`
 
-### HTTP Request
+Get a specific parcel by providing the parcel tracking reference number. 
+#### Parameter 
+| Parameter       | Description                                                                                                                                                               | Parameter Type | Data Type        |
+|-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------|------------------|
+| trackingRef     | Just pass an array of tracking reference numbers. You can pass multiple tracking numbers. To get only one- just pass a single item inside the array, ex - ['CD043DD83']   | body           | Array[string]    |
 
-`DELETE http://example.com/kittens/<ID>`
 
-### URL Parameters
 
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to delete
+---
+
+
+## Create Delivery Parcel
+
+> Definition
+ 
+```
+POST http://eggtransport.chaldal.com/api/Task/CreateThirdPartyDeliveryTask
+```
+
+
+`POST /Task/CreateThirdPartyDeliveryTask`
+
+
+Create normal delivery parcel
+
+
+
+## Create Pickup Parcel
+
+> Definition
+ 
+```
+POST http://eggtransport.chaldal.com/api/Task/CreateThirdPartyPickUpTask
+```
+
+
+`POST /Task/CreateThirdPartyPickUpTask`
+
+
+Create pickup parcel
+
+
 
