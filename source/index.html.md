@@ -19,12 +19,11 @@ search: true
 
 #### API ENDPOINTS
 * Live: [http://eggtransport.chaldal.com/api](http://eggtransport.chaldal.com/api) 
-* Development: [http://dev-eggtransportin.chaldal.com/api](http://dev-eggtransportusw.chaldal.com/api) 
+
 
 API  Explorer available at - ( Powered by Swagger )
 
 * Live: [http://eggtransport.chaldal.com/swagger](http://eggtransport.chaldal.com/swagger) 
-* Development: [http://dev-eggtransportin.chaldal.com/swagger](http://dev-eggtransportusw.chaldal.com/swagger)
 
 
 # Authentication
@@ -63,7 +62,7 @@ You will need to pass your User Id and API key as http header request to all the
   },
   "AddressInfo":{
       "Address":410000,
-      "Identity":"27fc8asd-a34a-4b7a-b2fc-94e6ed4a659e",
+      "Identity":"00000000-0000-0000-0000-000000000000",
       "FullName":"CUSTOMER NAME",
       "StreetAddress":"Niketon Gulshan",
       "PhoneNumber":"+8801900000000",
@@ -110,8 +109,8 @@ GET http://eggtransport.chaldal.com/api/Task/SearchTasksForMyOrg
 $ curl 'http://eggtransport.chaldal.com/api/Task/SearchTasksForMyOrg?searchText=&taskType=All&highLevelStatus=All&fromDate=null&toDate=null&pageNum=1&pageSize=20' \
   -X GET \
   --header 'Accept: application/json' \
-  --header 'X-Egg-ApiKey : c3750994-e429-4957-b35d- 40190d002c75' \
-  --header 'X-Egg-UserId : cb3073b8-ddd2-432f-80b3-efbc725e23f7'
+  --header 'X-Egg-ApiKey : 00000000-0000-0000-0000-000000000000' \
+  --header 'X-Egg-UserId : 00000000-0000-0000-0000-000000000000'
 ```
 > Example Response
 
@@ -136,7 +135,7 @@ $ curl 'http://eggtransport.chaldal.com/api/Task/SearchTasksForMyOrg?searchText=
             },
             "AddressInfo":{
                 "Address":410000,
-                "Identity":"27fc8asd-a34a-4b7a-b2fc-94e6ed4a659e",
+                "Identity":"00000000-0000-0000-0000-000000000000",
                 "FullName":"CUSTOMER NAME",
                 "StreetAddress":"Niketon Gulshan",
                 "PhoneNumber":"+8801900000000",
@@ -201,8 +200,8 @@ $ curl 'http://eggtransport.chaldal.com/api/Task/GetTasks' \
  -X POST \
  --header 'Accept: application/json' \
  --header 'Content-Type: application/json' \
- --header 'X-Egg-ApiKey : c3750994-e429-4957-b35d-40190d002c75' \
- --header 'X-Egg-UserId : cb3073b8-ddd2-432f-80b3-efbc725e23f7' \
+ --header 'X-Egg-ApiKey : 00000000-0000-0000-0000-000000000000' \
+ --header 'X-Egg-UserId : 00000000-0000-0000-0000-000000000000' \
  -d '["YMMP68CNJ","VHM1W8CNL"]' 
 ```
 
@@ -225,7 +224,7 @@ $ curl 'http://eggtransport.chaldal.com/api/Task/GetTasks' \
     },
     "AddressInfo": {
       "Address": 415409,
-      "Identity": "dfa83301-8657-49d6-9ffd-63fa920c6aaa",
+      "Identity": "00000000-0000-0000-0000-000000000000",
       "FullName": "Ayesha Marzana",
       "StreetAddress": "House 60/D .Road 131. Gulshan 1,Vantage Travel Agency-2nd floor.,",
       "PhoneNumber": "+8801630167640",
